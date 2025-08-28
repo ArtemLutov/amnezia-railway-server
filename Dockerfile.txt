@@ -1,0 +1,9 @@
+# Используем официальный образ AmneziaVPN сервера
+FROM amneziagov/amnezia-vpn-server:latest
+
+# Копируем нашу предварительную конфигурацию (если она есть)
+# COPY server.config /etc/amnezia/server.config
+
+# Открываем порты, которые использует AmneziaVPN.
+# Railway сам назначает внешний порт, поэтому просто слушаем нужные нам порты внутри контейнера.
+EXPOSE 443/tcp 443/udp 500/udp 4500/udp 53/udp
